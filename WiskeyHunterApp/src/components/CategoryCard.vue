@@ -2,11 +2,16 @@
 defineProps({
   category: String,
   imgSource: String,
+  onClick: Function,
 });
 </script>
 
 <template>
-  <div id="container" :style="{ backgroundImage: `url('${imgSource}')` }">
+  <div
+    @click="onClick"
+    id="container"
+    :style="{ backgroundImage: `url('${imgSource}')` }"
+  >
     <h2 id="title">{{ category }}</h2>
   </div>
 </template>
