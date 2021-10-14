@@ -10,7 +10,9 @@ import CategoryCard from './components/CategoryCard.vue';
   <div>
     <div>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/auctions">Auctions</router-link> |
+      <router-link to="/distilleries">Distilleries</router-link>
     </div>
     <router-view />
   </div>

@@ -3,6 +3,8 @@ import { ref } from 'vue';
 
 defineProps({
   msg: String,
+  onClickLeft: Function,
+  onClickRight: Function,
 });
 
 const count = ref(0);
