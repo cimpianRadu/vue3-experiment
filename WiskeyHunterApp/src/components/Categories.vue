@@ -6,9 +6,11 @@ const categories = await getCategories({ requestUrl: 'list.php?c=list' });
 
 <template>
   <div id="container">
-    <p v-for="cat in categories.drinks" :key="cat.strCategory">
-      {{ cat.strCategory }}
-    </p>
+    <ui-tab-bar v-model="active" class="hero-demo-tab-bar">
+      <ui-tab v-for="(item, index) in categories.drinks" :key="index">{{
+        item.strCategory
+      }}</ui-tab>
+    </ui-tab-bar>
   </div>
 </template>
 <style scoped>
