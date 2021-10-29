@@ -1,34 +1,32 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue';
-import { getCocktailsByCategory } from '../api/get-cocktails-by-category';
+import { getDrinksByCategory } from '../api/get-cocktails-by-category';
 import Cocktail from '../components/Cocktail.vue';
 
 const props = defineProps({
   category: String,
 });
 
-const cocktails = ref([]);
+const drinks = ref([]);
 
 onMounted(async () => {
-  cocktails.value = await getCocktailsByCategory({
+  drinks.value = await getDrinksByCategory({
     requestUrl: `filter.php?c=${props.category}`,
   });
 });
 
 watch(props, async (prop) => {
-  cocktails.value = await getCocktailsByCategory({
+  drinks.value = await getDrinksByCategory({
     requestUrl: `filter.php?c=${prop.category}`,
   });
 });
 </script>
 
 <template>
-  <p id="category">{{ category }} - {{ cocktails.drinks?.length }}</p>
-  <Cocktail
-    v-for="(drink, index) in cocktails.drinks"
-    :key="index"
-    :drink="drink"
-  />
+  <div>
+    <p id="category">{{ category }} - {{ drinks?.length }}</p>
+    <Cocktail v-for="(drink, index) in drinks" :key="index" :drink="drink" />
+  </div>
 </template>
 
 <style scoped>
