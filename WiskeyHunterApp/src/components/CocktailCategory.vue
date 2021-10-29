@@ -25,11 +25,18 @@ watch(props, async (prop) => {
 <template>
   <div>
     <p id="category">{{ category }} - {{ drinks?.length }}</p>
-    <Cocktail v-for="(drink, index) in drinks" :key="index" :drink="drink" />
+    <div id="container">
+      <Cocktail v-for="(drink, index) in drinks" :key="index" :drink="drink" />
+    </div>
   </div>
 </template>
 
 <style scoped>
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #category {
   font-size: 22px;
   font-weight: bold;

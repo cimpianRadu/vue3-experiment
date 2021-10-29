@@ -21,7 +21,6 @@ import CategoryCard from './components/CategoryCard.vue';
 <style>
 body {
   height: max-content;
-  background-color: brown;
   margin: 0;
 }
 #app {
