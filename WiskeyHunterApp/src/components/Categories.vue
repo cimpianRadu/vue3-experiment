@@ -8,26 +8,27 @@ const active = ref(0);
 </script>
 
 <template>
-  <div id="container">
-    <ui-tab-bar v-model="active">
+  <div>
+    <ui-tab-bar v-model="active" v-bind:style="{ position: absolute }">
       <ui-tab v-for="(item, index) in categories.drinks" :key="index">
         {{ item.strCategory }}
       </ui-tab>
     </ui-tab-bar>
+    <Suspense>
+      <template #default>
+        <CocktailCategory :category="categories.drinks[active].strCategory" />
+      </template>
+      <template #fallback>
+        <h3>Loading cocktail...</h3>
+      </template>
+    </Suspense>
   </div>
-  <Suspense>
-    <template #default>
-      <CocktailCategory :category="categories.drinks[active].strCategory" />
-    </template>
-    <template #fallback>
-      <h3>Loading cocktail...</h3>
-    </template>
-  </Suspense>
 </template>
 
 <style scoped>
 #container {
   flex: 1;
-  flex-direction: row;
+  flex-direction: column;
+  background-color: slateblue;
 }
 </style>

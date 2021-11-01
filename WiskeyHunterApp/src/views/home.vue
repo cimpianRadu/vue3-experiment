@@ -5,7 +5,7 @@ import Categories from '../components/Categories.vue';
 <template>
   <Suspense>
     <template #default>
-      <div>
+      <div id="container">
         <Categories />
       </div>
     </template>
@@ -18,7 +18,8 @@ import Categories from '../components/Categories.vue';
 <style scoped>
 #container {
   display: flex;
-  justify-content: space-around;
-  height: 100%;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 80px;
 }
 </style>

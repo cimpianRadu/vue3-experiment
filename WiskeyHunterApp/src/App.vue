@@ -4,15 +4,30 @@
 import HelloWorld from './components/HelloWorld.vue';
 import WiskeyCard from './components/WiskeyCard.vue';
 import CategoryCard from './components/CategoryCard.vue';
+import { COLORS } from './constants';
 </script>
 
 <template>
-  <div>
-    <div>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/auctions">Auctions</router-link> |
-      <router-link to="/distilleries">Distilleries</router-link>
+  <div id="container">
+    <div id="nav" v-bind:style="{ backgroundColor: COLORS.JET }">
+      <div id="nav-element">
+        <router-link to="/"> <span class="nav-text">Home</span></router-link>
+      </div>
+      <div id="nav-element">
+        <router-link to="/about"
+          ><span class="nav-text">About</span></router-link
+        >
+      </div>
+      <div id="nav-element">
+        <router-link to="/auctions"
+          ><span class="nav-text">Auctions</span>
+        </router-link>
+      </div>
+      <div id="nav-element">
+        <router-link to="/distilleries">
+          <span class="nav-text">Distilleries</span></router-link
+        >
+      </div>
     </div>
     <router-view />
   </div>
@@ -30,5 +45,36 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+}
+
+#container {
+  display: flex;
+}
+
+#nav {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  justify-content: space-between;
+  z-index: 100;
+  font-weight: bold;
+}
+
+.nav-text {
+  color: hsl(300, 3%, 66%);
+}
+
+#nav-element {
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  flex: 1;
+  justify-content: center;
+}
+
+.router-link-exact-active > .nav-text {
+  color: whitesmoke;
 }
 </style>
