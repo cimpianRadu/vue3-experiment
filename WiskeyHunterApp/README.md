@@ -27,10 +27,14 @@ In an index/app html there should be a `div` that wraps all the html with a spec
 This `createApp` method receives an options object that can have the following properties:
 
 - data -> a function that returns an object with all the properties available in the html. To access these varaibles insisde html, **double moustache** syntax is used ({{ theVariable }}).
-- methods -> an object that defines for each property some JS methods that are avaialbe in the template (html). To access a varaible defined in the data method, **this** context is required (this.someVariable)
+- methods -> an object that defines for each property some JS methods that are avaialbe in the template (html). To access a variable defined in the data method, **this** context is required (this.someVariable)
 
 ## Working with components (SFC - Single File Components)
 
 ### `script setup`
+
+- props - define by `defineProps({})` method
+- variables declared inside `<script/>` are directly avaialbe in template
+- top level asyc support ( you can await directly in `<script/>`)
 
 ### `composition api`
