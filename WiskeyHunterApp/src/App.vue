@@ -1,7 +1,6 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue';
 import WiskeyCard from './components/WiskeyCard.vue';
 import CategoryCard from './components/CategoryCard.vue';
 import { COLORS } from './constants';
@@ -14,8 +13,8 @@ import { COLORS } from './constants';
         <router-link to="/"> <span class="nav-text">Home</span></router-link>
       </div>
       <div id="nav-element">
-        <router-link to="/about"
-          ><span class="nav-text">About</span></router-link
+        <router-link to="/random"
+          ><span class="nav-text">Random</span></router-link
         >
       </div>
       <div id="nav-element">
@@ -45,10 +44,12 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+  background-color: hsl(0, 0%, 16%);
 }
 
 #container {
   display: flex;
+  background-color: hsl(0, 0%, 16%);
 }
 
 #nav {

@@ -10,7 +10,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ## This is a side project to learn VUE 3 JS and explore its features.
 
-## Data source: https://whiskyhunter.net/api/
+## Data source: https://www.thecocktaildb.com/api.php
 
 ## Deployment tool: Vercel
 
@@ -28,3 +28,9 @@ This `createApp` method receives an options object that can have the following p
 
 - data -> a function that returns an object with all the properties available in the html. To access these varaibles insisde html, **double moustache** syntax is used ({{ theVariable }}).
 - methods -> an object that defines for each property some JS methods that are avaialbe in the template (html). To access a varaible defined in the data method, **this** context is required (this.someVariable)
+
+## Working with components (SFC - Single File Components)
+
+### `script setup`
+
+### `composition api`

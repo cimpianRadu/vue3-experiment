@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router';
-import About from '../views/about.vue';
+import Random from '../views/random.vue';
 import Home from '../views/home.vue';
 import Auctions from '../views/auctions.vue';
 import Distilleries from '../views/distilleries.vue';
@@ -11,9 +11,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
+    path: '/random',
+    name: 'Random',
+    component: Random,
   },
   {
     path: '/auctions',
